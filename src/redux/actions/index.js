@@ -8,6 +8,21 @@ export const ED_EXP = 'EDIT_EXPENSE';
 export const FSD_ED = 'FINISHED_EDIT';
 export const EDIT = 'BEING_EDITED';
 export const AMOUNT = 'SET_AMOUNT';
+export const CLOSE = 'CLOSE_FORM_EDIT';
+export const OPEN = 'OPEN_FORM_EDIT';
+export const TO_RENDER = 'EXPENSE_TO_RENDER';
+
+export function renderExpense(id) {
+  return { type: TO_RENDER, payload: id };
+}
+
+export function closeFormEdit() {
+  return { type: CLOSE };
+}
+
+export function openFormEdit() {
+  return { type: OPEN };
+}
 
 export function userEmail(email) {
   return { type: USER_EMAIL, payload: email };

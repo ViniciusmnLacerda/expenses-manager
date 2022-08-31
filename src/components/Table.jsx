@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { beingEdited, isEditing, removeExpense, setAmount } from '../redux/actions';
+import {
+  beingEdited, isEditing, openFormEdit, removeExpense, setAmount
+} from '../redux/actions';
+import '../styles/Table.css';
 
 class Table extends Component {
   editClick = (id) => {
     const { dispatch } = this.props;
     dispatch(beingEdited(id));
     dispatch(isEditing());
+    dispatch(openFormEdit());
   };
 
   totalExpense = () => {
@@ -28,66 +32,79 @@ class Table extends Component {
   };
 
   render() {
-    const { expenses, areYouEditing } = this.props;
+    const { areYouEditing, amount, expenseToRender } = this.props;
     return (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th data-testid="head-description">Descrição</th>
-              <th data-testid="head-tag">Tag</th>
-              <th data-testid="head-method">Método de pagamento</th>
-              <th data-testid="head-value">Valor</th>
-              <th data-testid="head-currency">Moeda</th>
-              <th data-testid="head-exchange">Câmbio utilizado</th>
-              <th data-testid="head-amount">Valor convertido</th>
-              <th data-testid="head-brl">Moeda de conversão</th>
-              <th data-testid="head-button">Editar/Excluir</th>
-            </tr>
-          </thead>
-          <tbody>
-            {expenses.map((expense) => {
-              const { description, tag, method, id, value } = expense;
-              const exchange = expense.exchangeRates[expense.currency].ask;
-              return (
-                <tr key={ id }>
-                  <td data-testid="body-description">{description}</td>
-                  <td data-testid="body-tag">{tag}</td>
-                  <td data-testid="body-method">{method}</td>
-                  <td data-testid="body-value">{Number(expense.value).toFixed(2)}</td>
-                  <td
-                    data-testid="body-currency"
+      <div className="table">
+        <div className="header-table">
+          <h1>
+            Balance
+            {' '}
+            <span>{`R$ ${amount}`}</span>
+          </h1>
+        </div>
+        {expenseToRender.length > 0 && (
+          expenseToRender.map((element) => {
+            const {
+              description, tag, method, id, value, currency,
+            } = element;
+            const exchange = element.exchangeRates[element.currency].ask;
+            const currencyName = element.exchangeRates[element.currency].name;
+            return (
+              <div key={id} className="expense-table">
+                <div className="text-table">
+                  <h2>Value</h2>
+                  <p>{`${Number(expenseToRender[0].value).toFixed(2)} ${currency}`}</p>
+                </div>
+                <div className="text-table">
+                  <h2>Currency</h2>
+                  <p>{currencyName.split('/')[0]}</p>
+                </div>
+                <div className="text-table">
+                  <h2>Exchange rate</h2>
+                  <p>{Number(exchange).toFixed(2)}</p>
+                </div>
+                <div className="text-table">
+                  <h2>Converted value</h2>
+                  <p>
+                    {`R$ ${((Number(exchange)) * value).toFixed(2)}`}
+                  </p>
+                </div>
+                <div className="text-table">
+                  <h2>Tag</h2>
+                  <p>{tag}</p>
+                </div>
+                <div className="text-table">
+                  <h2>Payment</h2>
+                  <p>{method}</p>
+                </div>
+                <div className="text-table">
+                  <h2>Description</h2>
+                  <p>{description}</p>
+                </div>
+                <div className="buttons-table">
+                  <button
+                    className="edit-btn"
+                    data-testid="edit-btn"
+                    type="button"
+                    disabled={areYouEditing}
+                    onClick={() => this.editClick(id)}
                   >
-                    {expense.exchangeRates[expense.currency].name}
-                  </td>
-                  <td data-testid="body-exchange">{Number(exchange).toFixed(2)}</td>
-                  <td data-testid="body-amount">
-                    {((Number(exchange)) * value).toFixed(2)}
-                  </td>
-                  <td data-testid="body-brl">Real</td>
-                  <td>
-                    <button
-                      data-testid="edit-btn"
-                      type="button"
-                      disabled={ areYouEditing }
-                      onClick={ () => this.editClick(id) }
-                    >
-                      Editar
-                    </button>
-                    <button
-                      data-testid="delete-btn"
-                      type="button"
-                      disabled={ areYouEditing }
-                      onClick={ () => this.removeClick(id) }
-                    >
-                      Excluir
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                    Edit
+                  </button>
+                  <button
+                    className="delete-btn"
+                    data-testid="delete-btn"
+                    type="button"
+                    disabled={areYouEditing}
+                    onClick={() => this.removeClick(id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            );
+          })
+        )}
       </div>
     );
   }
@@ -95,13 +112,19 @@ class Table extends Component {
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  expenseToRender: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   dispatch: PropTypes.func.isRequired,
   areYouEditing: PropTypes.bool.isRequired,
+  amount: PropTypes.string.isRequired,
+  idToRender: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
   areYouEditing: state.wallet.areYouEditing,
+  amount: state.wallet.amount,
+  expenseToRender: state.wallet.expenseToRender,
+  idToRender: state.wallet.idToRender,
 });
 
 export default connect(mapStateToProps)(Table);

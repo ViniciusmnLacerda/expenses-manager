@@ -1,0 +1,80 @@
+.side-bar {
+  width: 35%;
+  height: 100%;
+  background: #F2F2F2;
+  padding: 40px 0;
+  border-radius: 10px 0 0 10px;
+}
+
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.side-bar header h1 {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.side-bar header i:hover {
+  cursor: pointer;
+}
+
+.side-bar header i::before{
+  content: "";
+  display: block;
+  background: #C5CBE0;
+  width: 24px;
+  height: 4px;
+  border-radius: 10px;
+  margin: 10px 0 0;
+}
+
+.side-bar header i::after{
+  content: "";
+  display: block;
+  background: #C5CBE0;
+  width: 24px;
+  height: 4px;
+  border-radius: 10px;
+  margin: 10px 0 0;
+  margin: -4px 0 0;
+  transform: rotate(90deg);
+} 
+
+.side-bar-content {
+  height: 80%;
+  overflow-y: scroll;
+  padding: 0 60px;
+}
+
+.expense-sidebar {
+  background: #FFF;
+  width: 100%;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0 0 40px;
+  padding: 20px;
+  transition: 0.3s ease;
+  filter: grayscale(1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+
+.expense-sidebar:hover, .expense-sidebar:focus {
+  border-color: #38c5ff;
+  filter: grayscale(0);
+}
+
+.expense-sidebar p {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  letter-spacing: 1px;
+}

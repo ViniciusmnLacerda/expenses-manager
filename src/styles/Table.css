@@ -1,0 +1,96 @@
+.table {
+  width: 65%;
+  background-color: #fff;
+  padding: 40px 40px;
+  border-radius: 0 10px 10px 0;
+}
+
+.header-table {
+  border-bottom: 1px solid #F2F2F2;
+  padding-bottom: 40px;
+}
+
+.header-table h1 {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 44px
+}
+
+.header-table h1 span {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.expense-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-table {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.text-table:hover {
+  background-color: #38c5ff;
+}
+
+.text-table h2 {
+  width: 30%;
+  width: 100%;
+  margin: 0 0 10px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-table p {
+  width: 70%;
+  text-align: end;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.buttons-table {
+  align-self: flex-end;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px
+}
+
+.buttons-table button {
+  transition: all .5s ease;
+  width: 80px;
+  height: 30px;
+  border-radius: 30px;
+  color: #38c5ff;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid #38c5ff;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.buttons-table .edit-btn:hover {
+  background-color: #24a15c;
+  border: 1px solid #24a15c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.buttons-table .delete-btn:hover {
+  background-color: #F23D4C;
+  border: 1px solid #F23D4C;
+  color: #fff;
+  cursor: pointer;
+}

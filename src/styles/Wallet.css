@@ -1,0 +1,14 @@
+.body-wallet {
+  width: 100%;
+  height: 100%;
+  background-color: #f0868f;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.wallet {
+  width: 60%;
+  height: 80%;
+  display: flex;
+  border-radius: 100%;
+}

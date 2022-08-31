@@ -53,7 +53,7 @@
 }
 
 label {
-  width: 80%;
+  width: 70%;
 }
 
 .input-text {
@@ -78,7 +78,7 @@ label {
 
 .btn {
   transition: all .5s ease;
-  width: 60%;
+  width: 40%;
   height: 40px;
   border-radius: 30px;
   color: #F23D4C;;

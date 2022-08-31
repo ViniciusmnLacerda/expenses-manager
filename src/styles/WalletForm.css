@@ -1,0 +1,153 @@
+.form-expenses {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.form-expenses form {
+  z-index: 2;
+  width: 60%;
+  height: 60%;
+  border-radius: 10px;
+}
+
+.title-form-expenses {
+  background: #38c5ff;
+  border-radius: 10px 10px 0 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title-form-expenses h1 {
+  padding: 20px;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.close-form-expenses {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.close-form-expenses svg{
+  width: 40px;
+  height: 40px;
+  color: #FFF;
+  transition: all .5s ease;
+}
+.close-form-expenses:hover {
+  background-color: #fff;
+}
+
+.close-form-expenses svg:hover{
+  color: #38c5ff;
+}
+
+.value-form-expenses {
+  display: flex;
+}
+
+.btn-form-expenses {
+  background: #38c5ff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  border-radius: 0 0 10px 10px;
+}
+
+.btn-form-expenses button {
+  transition: all .5s ease;
+  width: 40%;
+  height: 40px;
+  border-radius: 30px;
+  color: #000;;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid #38c5ff;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+
+.btn-form-expenses button:hover {
+  background-color: #24a15c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.body-form-expenses {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: calc(100% - 180px);
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.value-form-expenses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-form-expenses label {
+  font-size: 17px;
+  color: rgb(56, 197, 255);
+}
+
+.value-form-expenses input, .value-form-expenses select {
+  width: 70%;
+  border: 0px solid transparent;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  height: 30px;
+  outline: none;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.value-form-expenses input:focus, .value-form-expenses select:focus {
+  box-shadow: 0 5px 15px rgb(56 197 255 / 15%);
+  border-radius: 5px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+
+.description-form-expenses label{
+  display: flex;
+  flex-direction: column;
+  color: rgb(56, 197, 255);
+  font-size: 18px;
+}
+
+.description-form-expenses label input {
+  width: 100%;
+  height: 70px;
+  text-align: start;
+  color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
