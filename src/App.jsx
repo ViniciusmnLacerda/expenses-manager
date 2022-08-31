@@ -11,12 +11,12 @@ export default class App extends Component {
           <Route
             exact
             path="/"
-            component={ Login }
+            component={Login}
           />
           <Route
             exact
             path="/carteira"
-            component={ Wallet }
+            component={Wallet}
           />
         </Switch>
       </BrowserRouter>

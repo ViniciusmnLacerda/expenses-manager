@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -116,7 +117,6 @@ Table.propTypes = {
   dispatch: PropTypes.func.isRequired,
   areYouEditing: PropTypes.bool.isRequired,
   amount: PropTypes.string.isRequired,
-  idToRender: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state) => ({

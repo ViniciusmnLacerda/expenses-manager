@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import PropTypes from 'prop-types';
 import React from 'react';
 import { IoClose } from 'react-icons/io5';
