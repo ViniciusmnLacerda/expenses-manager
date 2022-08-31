@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  display: flex;
+  width: 80%;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+  margin: 25px auto;
+  padding: 25px;
+}
+
+.image-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.inputs-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.inputs-container h1 {
+  color: #F23D4C;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+label {
+  width: 80%;
+}
+
+.input-text {
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+  padding: 1em 0.5em 0.5em;
+  padding-left: 2em;
+  outline: none;
+  margin: 1.5em auto;
+  transition: all .5s ease;
+  font-size: 14px;
+}
+
+.input-text:focus {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+  border-radius: 5px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.btn {
+  transition: all .5s ease;
+  width: 60%;
+  height: 40px;
+  border-radius: 30px;
+  color: #F23D4C;;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid rgb(241, 59, 75);;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.btn:disabled {
+  opacity: .3;
+  cursor: progress;
+}
+
+.btn:not(:disabled):hover, .btn:not(:disabled).btn:focus {
+  background-color: #F23D4C;;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width:768px) and (min-width: 684px) {
+  .login-container {
+    flex-direction: column-reverse;
+  }
+
+  .image-container {
+    width: 80%;
+  }
+
+  .inputs-container {
+    width: 100%;
+    gap: 0;
+  }
+}
+
+@media (max-width: 685px) {
+  .login-container {
+    flex-direction: column-reverse;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .inputs-container {
+    width: 100%;
+    gap: 0;
+  }
+}
