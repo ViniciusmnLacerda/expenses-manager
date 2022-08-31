@@ -12,3 +12,10 @@
   display: flex;
   border-radius: 100%;
 }
+
+@media (max-width: 1200px) {
+  .wallet {
+    width: 90%;
+    height: 90%;
+  }
+}

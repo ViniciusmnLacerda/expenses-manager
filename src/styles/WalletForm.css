@@ -151,3 +151,124 @@
   border-radius: 5px;
   border: 1px solid #aaa;
 }
+
+@media (max-width: 1200px) and (min-width: 530px) {
+  .form-expenses {
+    width: 90%;
+    height: 90%;
+  }
+
+  .title-form-expenses {
+    height: 90px;
+  }
+
+  .form-expenses form {
+    width: 95%;
+    height: 80%;
+  }
+  
+  .value-form-expenses {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .value-form-expenses label {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 35px;
+    color: rgb(56, 197, 255);
+    width: 100%;
+  }
+
+  .value-form-expenses span {
+    width: 60%;
+  }
+
+  .value-form-expenses input, .value-form-expenses select {
+    width: 60%;
+    font-size: 15px;
+  }
+
+  .description-form-expenses label{
+    width: 100%;
+    font-size: 35px;
+  }
+  
+  .description-form-expenses label input {
+    width: 100%;
+  }
+
+  .btn-form-expenses {
+    height: 90px;
+  }
+
+  .btn-form-expenses button {
+    height: 55px;
+    width: 35%;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 529px) {
+  .form-expenses {
+    width: 90%;
+    height: 90%;
+  }
+
+  .title-form-expenses {
+    height: 90px;
+  }
+
+  .form-expenses form {
+    width: 95%;
+    height: 80%;
+  }
+  
+  .value-form-expenses {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 90%;
+  }
+  
+  .value-form-expenses label {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 30px;
+    color: rgb(56, 197, 255);
+    width: 100%;
+  }
+
+  .value-form-expenses span {
+    width: 60%;
+  }
+
+  .value-form-expenses input, .value-form-expenses select {
+    width: 60%;
+    font-size: 15px;
+  }
+  .description-form-expenses {
+    height: 50%;
+  }
+  .description-form-expenses label{
+    width: 100%;
+    font-size: 30px;
+  }
+  
+  .description-form-expenses label input {
+    width: 100%;
+  }
+
+  .btn-form-expenses {
+    height: 90px;
+  }
+
+  .btn-form-expenses button {
+    height: 55px;
+    width: 60%;
+    font-size: 24px;
+  }
+}

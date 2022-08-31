@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import {
   AMOUNT, CLOSE, CURRENCY, EDIT, ED_EXP, EXPENSE, FSD_ED, OPEN, RM_EXPENSE, TO_RENDER
 } from '../actions';

@@ -62,7 +62,7 @@ export function fetchCoins() {
       const coins = await fetchAPI();
       dispatch(getCurrency(coins));
     } catch (error) {
-      console.log(error);
+      throw new Error();
     }
   };
 }

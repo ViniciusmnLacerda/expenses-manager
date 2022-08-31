@@ -1,10 +1,10 @@
+import { render } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { render } from '@testing-library/react';
 
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../../redux/reducers';
 
@@ -29,8 +29,8 @@ const renderWithRouterAndRedux = (
 
   // spread do retorno do render { getByTestId, getByRole, etc }
   ...render(
-    <Router history={ history }>
-      <Provider store={ store }>
+    <Router history={history}>
+      <Provider store={store}>
         {component}
       </Provider>
     </Router>,

@@ -110,7 +110,7 @@ class WalletForm extends React.Component {
           <div className="body-form-expenses">
             <div className="value-form-expenses">
               <label htmlFor="value">
-                Value
+                <span>Value</span>
                 {' '}
                 <input
                   data-testid="value-input"
@@ -122,7 +122,7 @@ class WalletForm extends React.Component {
                 />
               </label>
               <label htmlFor="currency">
-                Currency
+                <span>Currency</span>
                 {' '}
                 <select
                   data-testid="currency-input"
@@ -143,7 +143,7 @@ class WalletForm extends React.Component {
                 </select>
               </label>
               <label htmlFor="method">
-                Payment
+                <span>Payment</span>
                 {' '}
                 <select
                   data-testid="method-input"
@@ -158,7 +158,7 @@ class WalletForm extends React.Component {
                 </select>
               </label>
               <label htmlFor="tag">
-                Tag
+                <span>Tag</span>
                 {' '}
                 <select
                   data-testid="tag-input"
@@ -177,7 +177,7 @@ class WalletForm extends React.Component {
             </div>
             <div className="description-form-expenses">
               <label htmlFor="description">
-                Description
+                <span>Description</span>
                 {' '}
                 <input
                   data-testid="description-input"

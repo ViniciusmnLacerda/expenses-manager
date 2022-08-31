@@ -94,3 +94,39 @@
   color: #fff;
   cursor: pointer;
 }
+
+@media (max-width: 657px) and (min-width: 485px){
+  .table {
+    padding: 40px 5px 40px 5px;
+  }
+}
+
+@media (max-width: 484px) and (min-width: 2px){
+  .expense-table {
+    height: 100%;
+  }
+
+  .text-table, .buttons-table {
+    height: 10%;
+  }
+
+  .table {
+    padding: 40px 5px 40px 5px ;
+  }
+  .header-table h1 span {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .header-table h1 {
+    font-size: 20px;
+  }
+
+  .text-table h2 {
+    font-size: 14px;
+  }
+
+  .text-table p {
+    font-size: 14px;
+  }
+}
