@@ -17,8 +17,8 @@ class WalletForm extends React.Component {
       value: '',
       description: '',
       currency: 'USD',
-      method: 'Dinheiro',
-      tag: 'Alimentação',
+      method: 'Cash',
+      tag: 'Food',
     };
   }
 
@@ -65,7 +65,7 @@ class WalletForm extends React.Component {
     } = this.props;
     const id = expenses.length;
     const exchangeRates = await fetchAskApi();
-    const food = 'alimentação';
+    const food = 'Food';
     if (areYouEditing) {
       const {
         value, description, currency, method, tag,
@@ -84,7 +84,7 @@ class WalletForm extends React.Component {
       this.setState({
         value: '',
         description: '',
-        method: 'Dinheiro',
+        method: 'Cash',
         tag: food,
         currency: 'CAD',
       });
@@ -95,7 +95,7 @@ class WalletForm extends React.Component {
       this.setState({
         value: '',
         description: '',
-        method: 'Dinheiro',
+        method: 'Cash',
         tag: food,
         currency: 'USD',
       });
@@ -169,9 +169,9 @@ class WalletForm extends React.Component {
                   value={method}
                   onChange={this.handleChange}
                 >
-                  <option value="Dinheiro">Cash</option>
-                  <option value="Cartão de crédito">Credit card</option>
-                  <option value="Cartão de débito">Debit card</option>
+                  <option value="Cash">Cash</option>
+                  <option value="Credit card">Credit card</option>
+                  <option value="Debit card">Debit card</option>
                 </select>
               </label>
               <label htmlFor="tag">
@@ -184,7 +184,7 @@ class WalletForm extends React.Component {
                   value={tag}
                   onChange={this.handleChange}
                 >
-                  <option value="Alimentação">Food</option>
+                  <option value="Food">Food</option>
                   <option value="Lazer">Leisure</option>
                   <option value="Trabalho">Work</option>
                   <option value="Transporte">Transport</option>
