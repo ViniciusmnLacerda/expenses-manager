@@ -12,6 +12,7 @@ import '../styles/WalletForm.css';
 class WalletForm extends React.Component {
   constructor() {
     super();
+
     this.state = {
       value: '',
       description: '',
@@ -23,6 +24,17 @@ class WalletForm extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
+    const { areYouEditing } = this.props;
+    if (areYouEditing) {
+      const { expenseToRender } = this.props;
+      this.setState({
+        value: expenseToRender[0].value,
+        description: expenseToRender[0].description,
+        method: expenseToRender[0].method,
+        tag: expenseToRender[0].tag,
+        currency: expenseToRender[0].currency,
+      });
+    }
     dispatch(fetchCoins());
   }
 
@@ -42,8 +54,9 @@ class WalletForm extends React.Component {
   };
 
   closeForm = () => {
-    const { dispatch } = this.props;
+    const { dispatch, expenses } = this.props;
     dispatch(closeFormEdit());
+    dispatch(finishedEdit(expenses));
   };
 
   onClickAddExpensive = async () => {
@@ -67,16 +80,18 @@ class WalletForm extends React.Component {
       expense.exchangeRates = exchangeRatesEdit;
       dispatch(setAmount(this.totalExpense()));
       dispatch(finishedEdit(expenses));
+      dispatch(closeFormEdit());
       this.setState({
         value: '',
         description: '',
         method: 'Dinheiro',
         tag: food,
-        currency: 'USD',
+        currency: 'CAD',
       });
     } else {
       dispatch(getExpense({ ...this.state, id, exchangeRates }));
       dispatch(setAmount(this.totalExpense()));
+      dispatch(closeFormEdit());
       this.setState({
         value: '',
         description: '',
@@ -96,7 +111,7 @@ class WalletForm extends React.Component {
       <div className="form-expenses">
         <form>
           <div className="title-form-expenses">
-            <h1>Add Expense</h1>
+            <h1>{areYouEditing ? 'Edit expense' : 'add expense'}</h1>
             <div
               onClick={this.closeForm}
               className="close-form-expenses"
@@ -213,6 +228,7 @@ WalletForm.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   areYouEditing: PropTypes.bool.isRequired,
   whoIsBeingEdited: PropTypes.number.isRequired,
+  expenseToRender: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -222,6 +238,7 @@ const mapStateToProps = (state) => ({
   areYouEditing: state.wallet.areYouEditing,
   whoIsBeingEdited: state.wallet.whoIsBeingEdited,
   dispatch: PropTypes.func.isRequired,
+  expenseToRender: state.wallet.expenseToRender,
 });
 
 export default connect(mapStateToProps)(WalletForm);
