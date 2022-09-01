@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   amount: '0.00',
   areYouAdding: false,
   expenseToRender: [],
-  idToRender: 0,
+  idToRender: 1000000,
 };
 
 // eslint-disable-next-line default-param-last
