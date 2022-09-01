@@ -129,6 +129,7 @@ class WalletForm extends React.Component {
                 <span>Value</span>
                 {' '}
                 <input
+                  autoComplete="off"
                   data-testid="value-input"
                   type="number"
                   name="value"
