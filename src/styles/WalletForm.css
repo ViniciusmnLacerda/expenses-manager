@@ -150,6 +150,8 @@
   background: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   border: 1px solid #aaa;
+  font-size: 22px;
+  padding-left: 10px;
 }
 
 @media (max-width: 1200px) and (min-width: 530px) {
@@ -198,6 +200,8 @@
   
   .description-form-expenses label input {
     width: 100%;
+    font-size: 22px;
+    padding-left: 10px;
   }
 
   .btn-form-expenses {
