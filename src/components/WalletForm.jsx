@@ -185,10 +185,10 @@ class WalletForm extends React.Component {
                   onChange={this.handleChange}
                 >
                   <option value="Food">Food</option>
-                  <option value="Lazer">Leisure</option>
-                  <option value="Trabalho">Work</option>
-                  <option value="Transporte">Transport</option>
-                  <option value="Saúde">Health</option>
+                  <option value="Laisure">Leisure</option>
+                  <option value="Work">Work</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Health">Health</option>
                 </select>
               </label>
             </div>
