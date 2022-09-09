@@ -13,7 +13,7 @@ Users should be able to:
 - View the total expenses converted to a currency of choice;
 
 ### Demo
-- [Live project]()
+- [Live project](https://vinicius-expenses-manager.vercel.app/)
 
 ### Screenshots
 <img src="rdm1.png" alt="login" width="600"/>
